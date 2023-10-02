@@ -1,0 +1,112 @@
+<!-- Header -->
+<header class="header">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg header-nav">
+      <div class="navbar-header">
+        <a (click)="toggleSidebar()" id="mobile_btn" href="javascript:void(0);">
+          <span class="bar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+        <a routerLink="home" class="navbar-brand logo">
+          <img src="assets/img/logo.jpg" class="img-fluid" alt="Logo" />
+        </a>
+        <a routerLink="home" class="navbar-brand logo-small">
+          <img src="assets/img/logo-small.png" class="img-fluid" alt="Logo" />
+        </a>
+      </div>
+      <div class="main-menu-wrapper">
+        <div class="menu-header">
+          <a routerLink="home" class="menu-logo">
+            <img src="assets/img/logo.svg" class="img-fluid" alt="Logo" />
+          </a>
+          <a
+            (click)="hideSidebar()"
+            id="menu_close"
+            class="menu-close"
+            href="javascript:void(0);"
+          >
+            <i class="fas fa-times"></i
+          ></a>
+        </div>
+        <ul class="main-nav">
+          <ng-container *ngFor="let mainMenus of header">
+            <ng-container *ngIf="mainMenus.separateRoute === true">
+              <li routerLinkActive="active">
+                <a [routerLink]="mainMenus.routes">{{ mainMenus.tittle }}</a>
+              </li>
+            </ng-container>
+            <ng-container *ngIf="mainMenus.separateRoute === false">
+              <li class="has-submenu" routerLinkActive="active">
+                <a
+                  href="javascript:void(0);"
+                  (click)="mainMenus.showAsTab = !mainMenus.showAsTab"
+                  >{{ mainMenus.tittle }} <i class="fas fa-chevron-down"></i
+                ></a>
+                <ul
+                  class="submenu"
+                  [ngClass]="{
+                    'd-block': mainMenus.showAsTab === true
+                  }"
+                >
+                  <ng-container *ngFor="let menu of mainMenus.menu">
+                    <ng-container *ngIf="menu.hasSubRoute === false">
+                      <li routerLinkActive="active">
+                        <a [routerLink]="menu.routes">{{ menu.menuValue }}</a>
+                      </li>
+                    </ng-container>
+                    <ng-container *ngIf="menu.hasSubRoute === true">
+                      <li class="has-submenu" routerLinkActive="active">
+                        <a
+                          (click)="menu.showSubRoute = !menu.showSubRoute"
+                          [routerLink]="menu.routes"
+                          >{{ menu.menuValue }}</a
+                        >
+                        <ul
+                          class="submenu"
+                          [ngClass]="{
+                            'd-block': menu.showSubRoute === true
+                          }"
+                        >
+                          <ng-container *ngFor="let subMenu of menu.subMenus">
+                            <li routerLinkActive="active">
+                              <a [routerLink]="subMenu.routes">{{
+                                subMenu.menuValue
+                              }}</a>
+                            </li>
+                          </ng-container>
+                        </ul>
+                      </li>
+                    </ng-container>
+                  </ng-container>
+                </ul>
+              </li>
+            </ng-container>
+          </ng-container>
+        </ul>
+      </div>
+      <!-- <p> {{isLoggedIn}} </p> -->
+      <ul *ngIf="!isLoggedIn" class="nav header-navbar-rht">
+        <li class="nav-item">
+          <a class="nav-link header-login" routerLink="/authentication/login" (click)="login()"
+            ><span><i class="fa-regular fa-user"></i></span>Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link header-reg" routerLink="/authentication/register"
+            ><span><i class="fa-solid fa-lock"></i></span>Sign Up</a
+          >
+        </li>
+      </ul>
+      <ul *ngIf="isLoggedIn" class="nav header-navbar-rht">
+        <li class="nav-item">
+          <a class="nav-link header-login" (click)="logout()"
+            ><span><i class="fa-regular fa-user"></i></span>Logout</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- /Header -->

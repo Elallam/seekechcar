@@ -1,0 +1,681 @@
+		<!-- Breadscrumb Section -->
+		<div class="breadcrumb-bar">
+			<div class="container">
+				<div class="row align-items-center text-center">
+		    		<div class="col-md-12 col-12">
+			    	    <h2 class="breadcrumb-title"> {{car.model}} </h2>
+				    	<nav aria-label="breadcrumb" class="page-breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a routerLink="/home">Acceuil</a></li>
+								<li class="breadcrumb-item"><a href="javascript:void(0);">Parcourire</a></li>
+								<li class="breadcrumb-item active" aria-current="page"> {{car.name}} </li>
+							</ol>
+						</nav>							
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Breadscrumb Section -->
+        
+        <!-- Detail Page Head-->
+        <section class="product-detail-head">
+            <div class="container">
+                <div class="detail-page-head">
+                    <div class="detail-headings">
+                        <div class="star-rated">
+                            <div class="list-rating">
+                                <span class="year">2023</span>
+                                <ngb-rating [max]="5" [rate]="+car.rating!" [readonly]="true"></ngb-rating>
+                                <span class="d-inline-block average-list-rating"> {{+car.rating!}} </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-btn">
+                        <a href="javascript:void(0)"> <img src="assets/img/git-compare.svg" alt=""> Comparer </a>
+                        <a (click)="addToWishList()"><i class="feather icon-heart"></i> Favoris + {{user.login}} </a>
+                    </div>				  
+                </div>
+            </div>
+        </section>
+        <!-- /Detail Page Head-->
+
+        <section class="section product-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="detail-product">
+                            
+                            <div class="blog-img">
+                                <img src="{{car.imageDir}}/profile.jpg" class="img-fluid" alt="blog-img">												    
+                            </div>
+                            
+                        </div>
+                        <!-- <div class="review-sec extra-service">
+                            <div class="review-header">
+                                <h4>Extra Service</h4>
+                            </div>
+                            <span>Baby Seat - $10</span>
+                        </div> -->
+                        <!--Listing Features Section-->
+                        <div class="review-sec specification-card ">
+                            <div class="review-header">
+                                <h4>Specifications</h4>
+                            </div>
+                            <div class="card-body">
+                            <div class="lisiting-featues">
+                                <div class="row">
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-2.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>marque de voiture </span>
+                                            <h6> {{car.name}} </h6>
+                                        </div>
+                                    </div>
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-3.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>Transmission </span>
+                                            <h6> {{car.transmission}} </h6>
+                                        </div>
+                                    </div>
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-4.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>Type de Carburant </span>
+                                            <h6> {{car.fuelType}}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-5.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>Kilométrage </span>
+                                            <h6>{{car.mileage}} Km</h6>
+                                        </div>
+                                    </div>
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-7.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>Année</span>
+                                            <h6> 2023 </h6>
+                                        </div>
+                                    </div>
+                                    <div class="featureslist d-flex align-items-center col-lg-3 col-md-4">
+                                        <div class="feature-img">
+                                            <img src="assets/img/specification/specification-icon-10.svg" alt="">
+                                        </div>
+                                        <div class="featues-info">
+                                            <span>Porte </span>
+                                            <h6> {{car.numberOfDoors}} port</h6>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>	
+                            </div>	
+                        </div>		
+                        <div class="review-sec listing-feature">
+                            <div class="review-header">
+                                <h4>Caractéristiques de la Voiture</h4>
+                            </div>
+                            <div class="listing-description">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li><span><i class="fa-solid fa-check-double"></i></span>Siège Bébé</li>
+                                            <li><span><i class="fa-solid fa-check-double"></i></span>Excès de Protection</li>
+                                            <li><span><i class="fa-solid fa-check-double"></i></span>Siège Auto Pour enfants</li>
+                                            <li><span><i class="fa-solid fa-check-double"></i></span>GPS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>							
+                        <!--/Listing Features Section-->
+                        <div class="review-sec extra-service mb-0">
+                            <div class="review-header">
+                                <h4>Description: </h4>
+                            </div>
+                            <div class="description-list">
+                                <p>
+                                    {{car.description}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="review-sec extra-service mb-0">
+                            <div class="review-header">
+                                <h4>Video: </h4>
+                            </div>
+                            <div class="short-video">
+                                <iframe width="949" height="534" [src]='trustedUrl' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="review-sec listing-review">
+                            <div class="review-header">
+                                <h4>Reviews<span class="me-2"> &nbsp;   {{reviews.length}}</span></h4>
+                                <div class="reviewbox-list-rating">
+                                    <p>
+                                        <ngb-rating [max]="5" [rate]="+car.rating!" [readonly]="true" class="review"></ngb-rating>	
+                                        <span> ({{car.rating}} out of 5)</span> 
+                                    </p>
+                                </div>
+                            </div>
+                            <div *ngFor="let review of reviews" class="review-card">
+                                <div class="review-header-group">
+                                    <div class="review-widget-header">
+                                        <span class="review-widget-img">
+                                            <img src="assets/icons/avatar.png"  class="img-fluid" alt="">
+                                        </span>
+                                        <div class="review-design">
+                                            <h6>{{review.userName}}</h6>
+                                            <p>{{review.comment}}</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <ngb-rating [max]="5" [readonly]="true" [rate]="review.rating!" class="user-review"></ngb-rating>
+                                            <span> {{review.rating}} </span> 
+                                        </p>
+                                    </div>
+                                </div>						
+                                <p> {{("0" + review.datePosted!.getDate()).slice(-2)}}/{{("0" + (review.datePosted!.getMonth()+1)).slice(-2)}}/{{review.datePosted!.getFullYear()}} </p>
+                            </div>
+                        </div>
+                        
+                        <div class="review-sec leave-reply-form">
+                            <div class="review-header">
+                                <h4>Laisser un commentaire</h4>
+                            </div>
+                            <ul class="review-list-rating mb-3">
+                                <ngb-rating [max]="5" [formControl]="ratingControl" (click) ="getRating()"></ngb-rating>
+                            </ul>
+                            <div class="card-body">
+                                <div class="review-list">
+                                    <ul>
+                                        <li class="review-box feedbackbox mb-0">
+                                            <div class="review-details">
+                                                <form class="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">												
+                                                            <div *ngIf="!user" class="form-group">														
+                                                                <label>Nom Complet <span class="text-danger">*</span></label>	
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">													
+                                                            <div *ngIf="!user" class="form-group">
+                                                                <label>Email <span class="text-danger">*</span></label>	
+                                                                <input type="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <label>Commentaire </label>	
+                                                                <textarea [formControl]="comment" rows="4" class="form-control"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="submit-btn">
+                                                        <button class="btn btn-primary submit-review" type="submit" (click)="addReview()"> Soumettre Un Avis </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 theiaStickySidebar" id="reserver">
+                        <div class="stickybar">
+                        <div class="review-sec mt-0">
+                            <div class="review-header">
+                                <h4>Check Availability</h4>
+                            </div>
+                            <div class="" >		
+                                <form class="">
+                                    <ul>
+                                        <li class="column-group-main">
+                                            <div class="form-group">
+                                                <label>Adresse de ramssage <span style="color: red;">*</span></label>												
+                                                <div class="group-img">
+                                                    <input [formControl]="pickUp" type="text" class="form-control" placeholder="Addresse de ramassage" required>
+                                                    <div *ngIf="pickUp.invalid && (pickUp.dirty || pickUp.touched)" class="alert">
+                                                        <div *ngIf="pickUp.errors?.['required']" style="color: red;">s'il vous plaît entrer l'adresse de ramassage</div>
+                                                        <div *ngIf="pickUp.errors?.['minlength']">
+                                                            Name must be at least 4 characters long.
+                                                        </div>
+                                                        <div *ngIf="pickUp.errors?.['forbiddenName']">
+                                                            Name cannot be Bob.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="column-group-main">
+                                            <div class="form-group">
+                                                <label>Adresse de dépôt<span style="color: red;">*</span></label>												
+                                                <div class="group-img">
+                                                    <input [formControl]="dropOff"   type="text" class="form-control" placeholder="Adresse de dépôt" required>
+                                                    <div *ngIf="dropOff.invalid && (dropOff.dirty || dropOff.touched)" class="alert">
+                                                        <div *ngIf="dropOff.errors?.['required']" style="color: red;">s'il vous plaît entrer l'adresse de dépôt</div>
+                                                        <div *ngIf="dropOff.errors?.['minlength']">
+                                                            Name must be at least 4 characters long.
+                                                        </div>
+                                                        <div *ngIf="dropOff.errors?.['forbiddenName']">
+                                                            Name cannot be Bob.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="column-group-main">
+                                            <div class="form-group">
+                                                <label>Nom complet<span style="color: red;">*</span></label>												
+                                                <div class="group-img">
+                                                    <input [formControl]="userName" type="text" required class="form-control" placeholder="Nom complet">
+                                                    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert">
+                                                        <div *ngIf="userName.errors?.['required']" style="color: red;">s'il vous plaît entrer votre nom complet</div>
+                                                        <div *ngIf="userName.errors?.['minlength']">
+                                                            Name must be at least 4 characters long.
+                                                        </div>
+                                                        <div *ngIf="userName.errors?.['forbiddenName']">
+                                                            Name cannot be Bob.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="column-group-main">
+                                            <div class="form-group">
+                                                <label>Numero de telephone<span style="color: red;">*</span></label>												
+                                                <div class="group-img">
+                                                    <input [formControl]="phoneNumber" required type="tel" class="form-control" placeholder="+212 6">
+                                                    <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="alert">
+                                                        <div *ngIf="phoneNumber.errors?.['required']" style="color: red;">s'il vous plaît entrer votre Numero de telephone </div>
+                                                        <div *ngIf="phoneNumber.errors?.['minlength']">
+                                                            phoneNumber must be at least 4 characters long.
+                                                        </div>
+                                                        <div *ngIf="phoneNumber.errors?.['forbiddenName']">
+                                                            phoneNumber cannot be Bob.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="column-group-main">
+                                            <div class="form-group">
+                                                <label>Adresse Email<span style="color: red;">*</span></label>												
+                                                <div class="group-img">
+                                                    <input [formControl]="email" required type="email" class="form-control" placeholder="abcd@xyze.com">
+                                                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                                                        <div *ngIf="email.errors?.['required']" style="color: red;">s'il vous plaît entrer votre email </div>
+                                                        <div *ngIf="email.errors?.['minlength']">
+                                                            Name must be at least 4 characters long.
+                                                        </div>
+                                                        <div *ngIf="email.errors?.['forbiddenName']">
+                                                            Name cannot be Bob.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="column-group-main">	
+                                            <div class="form-group m-0">																	
+                                                <label>Date de Ramassage<span style="color: red;">*</span></label>
+                                            </div>
+                                            <div class="form-group-wrapp sidebar-form">
+                                                <div class="form-group me-2">												
+                                                    <div class="group-img">
+                                                        <input  [min]="todayDate" type="text"  required class="form-control datetimepicker" placeholder="04/11/2023" matInput [matDatepicker]="picker2" [formControl]="startDate" (dateChange)="changeDate()">
+                                                        <div *ngIf="startDate.invalid && (startDate.dirty || startDate.touched)" class="alert">
+                                                            <div *ngIf="startDate.errors?.['required']" style="color: red;">s'il vous plaît entrer la date de ramassage </div>
+                                                            <div *ngIf="startDate.errors?.['minlength']">
+                                                                Name must be at least 4 characters long.
+                                                            </div>
+                                                            <div *ngIf="startDate.errors?.['forbiddenName']">
+                                                                Name cannot be Bob.
+                                                            </div>
+                                                        </div>
+                                                        <mat-datepicker #picker2></mat-datepicker> 
+                                                        <mat-datepicker-toggle matIconSuffix [for]="picker2" class="datepicker-icon-listing">
+                                                            <mat-icon matDatepickerToggleIcon>
+                                                              <span>
+                                                                <i class="feather icon-calendar cus-icon-calender"></i>
+                                                              </span>
+                                                            </mat-icon>
+                                                          </mat-datepicker-toggle>
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                        </li>
+                                        <li class="column-group-main">						
+                                            <div class="form-group m-0">																	
+                                                <label>Date de Retoure<span style="color: red;">*</span></label>
+                                            </div>
+                                            <div class="form-group-wrapp sidebar-form">
+                                                <div class="form-group me-2">												
+                                                    <div class="group-img">
+                                                        <input [min]="eDate" type="text" required class="form-control datetimepicker" placeholder="04/11/2023" matInput [matDatepicker]="picker1" [formControl]="endDate">
+                                                        <div *ngIf="endDate.invalid && (endDate.dirty || endDate.touched)" class="alert">
+                                                            <div *ngIf="endDate.errors?.['required']" style="color: red;">s'il vous plaît entrer la date de retoure </div>
+                                                            <div *ngIf="endDate.errors?.['minlength']">
+                                                                Name must be at least 4 characters long.
+                                                            </div>
+                                                            <div *ngIf="endDate.errors?.['forbiddenName']">
+                                                                Name cannot be Bob.
+                                                            </div>
+                                                        </div>
+                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                        <mat-datepicker-toggle matIconSuffix [for]="picker1" class="datepicker-icon-listing">
+                                                            <mat-icon matDatepickerToggleIcon>
+                                                              <span>
+                                                                <i class="feather icon-calendar cus-icon-calender"></i>
+                                                              </span>
+                                                            </mat-icon>
+                                                          </mat-datepicker-toggle>
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                        </li>
+                                        <li class="column-group-last">
+                                            <div class="form-group mb-0">
+                                                <div class="search-btn">
+                                                    <button class="btn btn-primary check-available w-100" type="button" data-bs-toggle="modal" (click)="check()" data-bs-target="#pages_edit">Check Availability</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </form>	
+                            </div>	
+                        </div>
+                        <div class="review-sec extra-service mt-0">
+                            <div class="review-header">
+                                <h4>Listing Owner Details</h4>
+                            </div>
+                            <div class="owner-detail">
+                                <div class="owner-img">
+                                    <a href="javascript:void(0)"><img src="assets/img/profiles/avatar.jpg" alt=""></a>
+                                </div>
+                                <div class="reviewbox-list-rating">
+                                    <h5><a>See Kech Car</a></h5>
+                                    <p>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>	
+                                        <span> (5.0)</span> 
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="booking-list">
+                                <li>
+                                    Verification
+                                    <h6>Verified</h6>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="message-btn">
+                                        <a href="mailto:{{owner.email}}" class="btn btn-order">Message to owner</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <br/>
+                                </li>
+                                <li>
+                                    <div class="whatsapp-btn">
+                                        <a aria-label="Chat on WhatsApp" href="https://wa.me/{{owner.number}}">
+                                            <img alt="Chat on WhatsApp"src="assets/img/WhatsAppButtonGreenSmall.svg"/>
+                                       </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            </div>
+                        <div class="review-sec share-car mt-0">
+                            <div class="review-header">
+                                <h4>Partager Cette Voiture</h4>
+                            </div>
+                            <ul class="nav-social">
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fa-brands fa-facebook-f fa-facebook fi-icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fab fa-instagram fi-icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fab fa-behance fi-icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fa-brands fa-pinterest-p fi-icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fab fa-twitter fi-icon"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fab fa-linkedin fi-icon"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="review-sec share-car mt-0 mb-0">
+                            <div class="review-header">
+                                <h4>Voir La Localisation</h4>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3398.2083221333105!2d-8.026237907425893!3d31.600751023521028!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafeff3e6549d0b%3A0x403797c7539f6ef4!2sCar%20Rental%20Marrakech%20-%20Airport!5e0!3m2!1sfr!2sma!4v1692540526208!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe-video"></iframe>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">               
+                    <div class="col-md-12">
+                        <div class="details-car-grid">
+                            <div class="details-slider-heading">
+                                <h3>You May be Interested in</h3>
+                            </div>
+                            <div class="car-details-slider ">
+                                <owl-carousel-o [options]="interestedCarsOptions">
+                                    <ng-container *ngFor = "let data of interestedCars">
+                                      <ng-template carouselSlide>
+                                <div class="card">
+                                    <div class="listing-item pb-0">											
+                                        <div class="listing-img">
+                                            <a routerLink="/listing/listing-details/{{car.licenceNumber}}">
+                                                <img [src]="data.img1" class="img-fluid" alt="KIA">
+                                            </a>
+                                            <div class="fav-item">
+                                                <span class="featured-text">{{data.carName}}</span>
+                                                <a href="javascript:void(0)" class="fav-icon" (click)="data.like = !data.like" [ngClass]="{'selected' : data.like === true}">
+                                                    <i class="feather icon-heart"></i>
+                                                </a>										
+                                            </div>	
+                                        </div>										
+                                        <div class="listing-content">
+                                            <div class="listing-features">
+                                                <div class="author-img">
+                                                    <img [src]="data.img2" alt="author">
+                                                </div>
+                                                <h3 class="listing-title">
+                                                    <a href="javascript:void(0)">{{data.carModel}}</a>
+                                                </h3>																	  
+                                                <div class="list-rating">							
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <span>{{data.rating}}</span>
+                                                </div>
+                                            </div> 
+                                            <div class="listing-details-group">
+                                                <ul>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-05.svg" alt="Auto"></span>
+                                                        <p>{{data.carDetail1}}</p>
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-02.svg" alt="22 KM"></span>
+                                                        <p>{{data.carDetail2}}</p>
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-03.svg" alt="Petrol"></span>
+                                                        <p>{{data.carDetail3}}</p>
+                                                    </li>
+                                                </ul>	
+                                                <ul>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-04.svg" alt="Diesel"></span>
+                                                        <p>{{data.carDetail4}}</p>
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-05.svg" alt="2016"></span>
+                                                        <p>{{data.carDetail5}}</p>	
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/img/icons/car-parts-06.svg" alt="Persons"></span>
+                                                        <p>{{data.carDetail6}}</p>
+                                                    </li>
+                                                </ul>
+                                            </div>																 
+                                            <div class="listing-location-details">
+                                                <div class="listing-price">
+                                                    <span class="me-2"><i class="feather icon-map-pin"></i></span> {{data.country}}
+                                                </div>
+                                                <div class="listing-price">
+                                                    <h6>{{data.price}} <span>{{data.heading}}</span></h6>
+                                                </div>
+                                            </div>
+                                            <div class="listing-button">
+                                                <a routerLink=".listing/listing-details/{{car.licenceNumber}}" class="btn btn-order"><span><i class="feather icon-calendar me-2"></i></span>{{data.text}}</a>
+                                            </div>	
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ng-container>
+                      </owl-carousel-o>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <!-- <a href="https://wa.me/{{owner.number}}" class="button" target="_blank" style="background-color:#25d366; color:white">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a> -->
+            <a href="/listings/listing-details/{{car.licenceNumber}}#reserver" class="button btn btn-primary check-available w-100" target="_parent">
+            <p style="font-size:14px; align-content: center;">Reserver</p>
+        </a>
+        <!-- <a href="mailto:{{owner.email}}" class="button" target="_blank" style="background-color:#25d366; color: white">
+            <i class="fa-solid fa-envelope"></i>
+            </a> -->
+        </div>        
+        
+        
+
+        
+
+        <!-- Modal -->
+        <!-- To do check availability -->
+        <div *ngIf="name.value != null">
+			<div class="modal custom-modal fade check-availability-modal" id="pages_edit" role="dialog">
+				<div class="modal-dialog modal-dialog-centered modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<div class="form-header text-start mb-0">
+								<h4 class="mb-0 text-dark fw-bold">Availability Details</h4>
+							</div>
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span class="align-center" aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-lg-12 col-md-12">
+									<div class="available-for-ride">
+                                        <p><i class="fa-regular fa-circle-check"></i>{{car.name}} is available for a ride</p>
+                                    </div>
+								</div>
+								<div class="col-lg-12 col-md-12">
+									<div class="row booking-info">
+                                        <div class="col-md-4 pickup-address">
+                                            <h5>Pickup</h5>
+                                            <span>Date & time : {{startDate.value}}</span>
+                                        </div>
+                                        <div class="col-md-4 drop-address">
+                                            <h5>Drop Off</h5>
+                                            <span>Date & time : {{endDate.value}}</span>
+                                        </div>
+                                        <div class="col-md-4 booking-amount">
+                                            <h5>Booking Amount</h5>
+                                            <h6><span> {{car.rentPrice | currency:'EUR'}} </span> /day</h6>
+                                        </div>
+                                    </div>
+								</div>
+								<!-- <div class="col-lg-12 col-md-12">
+									<div class="booking-info seat-select">
+                                        <h6>Extra Service</h6>
+                                        <label class="custom_check">
+											<input type="checkbox" name="rememberme" class="rememberme">
+											<span class="checkmark"></span>
+                                            Baby Seat - <span class="ms-2">$10</span>
+										</label>
+                                    </div>
+								</div> -->
+                                <!-- <div class="col-md-12">
+                                    <div class="booking-info pay-amount">
+                                        <h6>Deposit Option</h6>
+                                        <div class="radio radio-btn">
+                                            <label>
+                                                <input type="radio" name="radio"> Pay Deposit
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="radio"> Full Amount
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                    <div class="booking-info service-tax">
+                                        <ul>
+                                            <li>Booking Price <span> {{car.rentPrice}} </span></li>
+                                            <!-- <li>Extra Service <span>$10</span></li> -->
+                                            <!-- <li>Tax <span>$5</span></li> -->
+                                        </ul>
+                                    </div>
+                                    <div class="grand-total">
+                                        <h5>Grand Total</h5>
+                                        <span>{{car.rentPrice}} x {{days}} = {{car.rentPrice!*days | currency: 'EUR' }} </span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a  class="btn btn-back" data-bs-dismiss="modal" routerLink="/booking/booking-list" (click)="doBooking()">Make a booking<i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+							</div>
+                            <!-- not available modal-->
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+
+		<!-- /Modal -->

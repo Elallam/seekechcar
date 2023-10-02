@@ -1,0 +1,9 @@
+.clock-icon {
+    top: 17px !important;
+    position: absolute !important;
+}
+
+.rating{
+    color: #ff9307;
+    font-size: 22px;
+}

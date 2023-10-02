@@ -1,0 +1,97 @@
+<!-- Breadscrumb Section -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <div class="row align-items-center text-center">
+            <div class="col-md-12 col-12">
+                <h2 class="breadcrumb-title">Contactez-Nous</h2>
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.home">Acceuil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>							
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadscrumb Section -->		     	
+
+<!-- Contact us -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-info-area">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 d-flex" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="0.1"> 
+                    <div class="single-contact-info flex-fill">
+                        <span><i class="feather icon-phone-call"></i></span>
+                        <h3>Téléphone</h3>
+                        <a href="tel:0606892422">+212 6 06 89 24 22</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="0.2"> 
+                    <div class="single-contact-info flex-fill">
+                        <span><i class="feather icon-mail"></i></span>
+                        <h3>Email</h3>
+                        <a href="mailto:seekechcar@gmail.com">seekechcar@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="0.3"> 
+                    <div class="single-contact-info flex-fill">
+                        <span><i class="feather icon-map-pin"></i></span>
+                        <h3>Adresse</h3>
+                        <a href="javascript:void(0);">Marrakech 40160</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="0.4"> 
+                    <div class="single-contact-info flex-fill">
+                        <span><i class="feather icon-clock"></i></span>
+                        <h3>Horaire d'ouverture</h3>
+                        <a href="javascript:void(0);">Lundi - Samedi(10.00AM - 05.30PM)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-info-area" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="0.5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="assets/img/contact-info.jpg" class="img-fluid" alt="Contact">
+                </div>
+                <div class="col-lg-6">
+                    <form action="#">
+                        <div class="row">
+                            <h1>Contactez-Nous!</h1>
+                            <div class="col-md-12"> 
+                                <div class="form-group">
+                                    <label>Nom <span class="text-danger">*</span></label>
+                                    <input [formControl]="nom" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-12"> 
+                                <div class="form-group">
+                                    <label>Email <span class="text-danger">*</span></label>
+                                    <input [formControl]="email" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-12"> 
+                                <div class="form-group">
+                                    <label>Téléphone <span class="text-danger">*</span></label>
+                                    <input [formControl]="tele" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>								
+                            <div class="col-md-12"> 
+                                <div class="form-group">
+                                    <label>Commentaire <span class="text-danger">*</span></label>
+                                    <textarea [formControl]="comment" class="form-control" rows="4" cols="50" placeholder="">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>		
+                        <button class="btn contact-btn" type="button" (click)="sendMail()">Envoyez</button>					
+                    </form>
+                </div>
+            </div>
+        </div>	
+    </div>	
+</section>	
+<!-- /Contact us -->	

@@ -1,0 +1,64 @@
+<p>Adminstration add works!</p>
+<!-- <form (ngSubmit)="onSubmit()">
+    <label for="name">Car Name: </label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="model">Car model: </label>
+    <input id="model" type="text" formControlName="model">
+
+</form> -->
+<form >
+    <div class="form-group">
+        <label for="name">Car Name</label>
+        <input type="text" class="form-control" id="name"
+         required
+        name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="model">Car Model</label>
+        <input type="text"  class="form-control" id="model"  required name="model">
+
+    </div>
+
+    <div class="form-group">
+        <label for="licenceNumber">Licence Number</label>
+        <input type="text"  class="form-control" id="licenceNumber"
+        required
+        name="licenceNumber">
+    </div>
+
+    <div class="form-group">
+        <label for="numberOfPassanger">Car Model</label>
+        <input type="text"  class="form-control" id="numberOfPassanger"
+            name="numberOfPassanger">
+    </div>
+
+    <div class="form-group">
+        <label for="mileage">mileage</label>
+        <input type="number"  class="form-control" id="mileage"
+            name="mileage">
+    </div>
+
+
+    <div class="form-group">
+        <label for="fuelType">Fuel Type</label>
+        <select class="form-control"  id="fuelType"
+                required
+             name="power">
+          <option *ngFor="let pow of fuelType" [value]="fuelType">{{pow}}</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="fuelType">Transmission</label>
+        <select class="form-control"  id="transmission"
+                required
+                name="transmission">
+          <option *ngFor="let pow of transmission" [value]="transmission">{{pow}}</option>
+        </select>
+    </div>
+
+    <button type="submit" (click)="onSubmit()">Save</button>
+</form>

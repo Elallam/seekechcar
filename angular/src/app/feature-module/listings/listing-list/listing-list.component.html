@@ -1,0 +1,386 @@
+		<!-- Breadscrumb Section -->
+		<div class="breadcrumb-bar">
+			<div class="container">
+				<div class="row align-items-center text-center">
+		    		<div class="col-md-12 col-12">
+			    	    <h2 class="breadcrumb-title">Voitures</h2>
+				    	<nav aria-label="breadcrumb" class="page-breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a routerLink="routes.home">Acceuil</a></li>
+								<li class="breadcrumb-item"><a href="javascript:void(0);">List</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Liste des voitures</li>
+							</ol>
+						</nav>							
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Breadscrumb Section -->
+
+		<div class="sortby-sec">
+			<div class="container">
+				<div class="sorting-div">
+					<div class="row d-flex align-items-center">
+						<div class="col-xl-4 col-lg-3 col-sm-12 col-12">
+							<div class="count-search">
+								<p>Affichage <span>1-{{selectedValue1}}</span> sur {{theTotalElement}} Résultats</p>
+							</div>
+						</div>
+						<div class="col-xl-8 col-lg-9 col-sm-12 col-12">
+							<div class="product-filter-group">
+								<div class="sortbyset">
+									<span class="sortbytitle">Show : </span>
+									<div class="sorting-select select-one">
+										<mat-select [(ngModel)]="selectedValue1" [ngModelOptions]="{standalone: true}" class="form-control select"  (selectionChange)="changeValue1()" placeholder="5">
+											<mat-option *ngFor="let data of selectedList1" [value]="data.value">
+											{{data.value}}
+											</mat-option>
+										</mat-select>
+									</div>
+									<div class="sorting-select select-two">
+										<mat-select [(ngModel)]="selectedValue2" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="De Bas en Haut ">
+											<mat-option *ngFor="let data of selectedList2" [value]="data.value">
+											{{data.value}}
+											</mat-option>
+										</mat-select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Car Grid View -->
+		<section class="section car-listing">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-lg-4 col-sm-12 col-12 theiaStickySidebar">
+						<div class="stickybar">
+						<form action="#" autocomplete="off" class="sidebar-form">
+							<!-- Customer -->
+							<div class="sidebar-heading">
+								<h3>Que Recherchez-Vous ?</h3>
+							</div>
+							<div class="product-search">								
+								<div class="form-custom">														
+									<input [formControl]="keyword" type="text" class="form-control" id="member_search1" placeholder="">
+									<span><img src="assets/img/icons/search.svg" alt="img"></span>
+								</div>
+							</div>
+							<div class="accordion" id="accordionMain1">
+								<div class="card-header-new" id="headingOne">
+									<h6 class="filter-title">
+										<a href="javascript:void(0);" class="w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Categorie 	
+											<span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+										</a> 
+									</h6>
+								</div>
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"  data-bs-parent="#accordionExample1">
+									<div class="card-body-chat">
+										<div class="row">
+											<div class="col-md-12">
+												<div id="checkBoxes1">
+															<div class="selectBox-cont">
+																<label *ngFor="let cat of cartCategories" class="custom_check w-100">
+																	<input type="checkbox" name="username" id="catCheck" [checked]="cat.checked" (change)="check(cat)">
+																	<span class="checkmark"></span>  {{cat.name}}
+																</label>
+																<!-- /View All -->
+															</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Customer -->
+
+							<div class="accordion" id="accordionMain2">
+								<div class="card-header-new" id="headingTwo">
+									<h6 class="filter-title">
+										<a href="javascript:void(0);" class="w-100 collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+											Type de Voiture
+											<span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+										</a> 
+									</h6>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"  data-bs-parent="#accordionExample2">
+									<div class="card-body-chat">
+										<div id="checkBoxes2">
+											<div class="selectBox-cont">
+												<label class="custom_check w-100">
+													<input type="checkbox" name="username">
+													<span class="checkmark"></span>  Convertible
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="username">
+													<span class="checkmark"></span> Crossover
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="username">
+													<span class="checkmark"></span> Sedan
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="username">
+													<span class="checkmark"></span> Wagon
+												</label>
+												<!-- View All -->
+												<div class="view-content">
+												<div class="viewall-One">	
+													<label class="custom_check w-100">
+														<input type="checkbox" name="username">
+														<span class="checkmark"></span> Pickup
+													</label>
+													<label class="custom_check w-100">
+														<input type="checkbox" name="username">
+														<span class="checkmark"></span> Wagon
+													</label>
+													<label class="custom_check w-100">
+														<input type="checkbox" name="username">
+														<span class="checkmark"></span> SUV
+													</label>
+												</div>
+												</div>
+												<!-- /View All -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- By Status -->
+							<div class="accordion" id="accordionMain3">
+								<div class="card-header-new" id="headingThree">
+									<h6 class="filter-title">
+										<a href="javascript:void(0);" class="w-100 collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+											Capacité
+											<span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+										</a> 
+									</h6>
+								</div>
+								<div id="collapseThree" class="collapse" aria-labelledby="headingThree"  data-bs-parent="#accordionExample3">
+									<div class="card-body-chat">
+										<div id="checkBoxes3">
+											<div class="selectBox-cont">
+												<label *ngFor="let seat of seats" class="custom_check w-100">
+													<input type="checkbox" name="bystatus" [checked]="seat.checked" (change)="checkSeat(seat)">
+													<span class="checkmark"></span> {{seat.name}}
+												</label>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<!-- /By Status -->
+
+							<!-- Category -->
+							<div class="accordion" id="accordionMain4">
+								<div class="card-header-new" id="headingFour">
+									<h6 class="filter-title">
+										<a href="javascript:void(0);" class="w-100 collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+											Prix
+											<span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+										</a> 
+									</h6>
+								</div>
+								<div id="collapseFour" class="collapse" aria-labelledby="headingFour"  data-bs-parent="#accordionExample4">
+									<div class="form-group">																	
+										<label>Prix minimum</label>
+									</div>
+									<div class="form-group-wrapp">
+										<div class="">												
+											<div class="group-img">
+											<input [formControl] = "minvalue" type="number" (change)="changeMinPrice()" class="form-control datetimepicker" placeholder="0">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">																	
+										<label>Prix maximum</label>
+									</div>
+									<div class="form-group-wrapp">
+										<div class="">												
+											<div class="group-img">
+											<input [formControl] = "maxvalue" type="number"  (change)="changeMaxPrice()"  class="form-control datetimepicker" placeholder="0">
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+              				<!-- /Category -->
+
+							<!-- <div class="accordion" id="accordionMain5">
+								<div class="card-header-new" id="headingFive">
+									<h6 class="filter-title">
+										<a href="javascript:void(0);" class="w-100 collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+											Avis
+											<span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+										</a> 
+									</h6>
+								</div>
+								<div id="collapseFive" class="collapse" aria-labelledby="headingFive"  data-bs-parent="#accordionExample5">
+									<div class="card-body-chat">
+										<div id="checkBoxes4">
+											<div class="selectBox-cont">
+												<label class="custom_check w-100">
+													<input type="checkbox" name="category">
+													<span class="checkmark"></span>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="category">
+													<span class="checkmark"></span>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="category">
+													<span class="checkmark"></span>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+												</label>
+												<label class="custom_check w-100">
+													<input type="checkbox" name="category">
+													<span class="checkmark"></span>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+												</label>
+												<div class="view-content">
+													<div class="viewall-Two">	
+														<label class="custom_check w-100">
+															<input type="checkbox" name="username">
+															<span class="checkmark"></span>
+															<i class="fas fa-star filled"></i>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div> -->
+              				<button (click)="filtrer()" type="submit" class="d-inline-flex align-items-center justify-content-center btn w-100 btn-primary filter-btn">
+                				<span><i class="feather icon-filter me-2"></i></span>Filtrer les Résultats
+              				</button>
+							<a (click)="resetFilter()" class="reset-filter">Réinitialiser le Filtre</a>
+            			</form>
+						</div>
+				 	</div>
+					<div class="col-xl-9 col-lg-8 col-sm-12 col-12">
+						<div *ngFor="let car of cars" class="row">
+                            <div class="listview-car">
+                                <div class="card">
+                                    <div class="blog-widget d-flex">
+                                        <div class="blog-img">
+                                            <a routerLink="/listings/listing-details/{{car.carId}}">
+                                                <img src="{{car.imageDir}}/profile.jpg" class="img-fluid" alt="blog-img">
+                                            </a>														    
+                                        </div>
+                                        <div class="bloglist-content w-100">
+                                           <div class="card-body">
+                                                <div class="blog-list-head d-flex">
+                                                    <div class="blog-list-title">
+                                                        <h3><a routerLink="/listings/listing-details/{{car.carId}}" (click)="onSelect(car)">
+															{{car.name}}
+														</a></h3>
+                                                        <h6>Categorie : <span>{{car.model}}</span></h6>		
+                                                    </div>
+                                                    <div class="blog-list-rate">
+                                                        <div class="list-rating">							
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <span> {{car.rating}} </span>
+                                                        </div>
+                                                        <h6> {{car.rentPrice | currency : 'EUR'}} <span>/ Jour</span></h6>
+                                                    </div>
+                                                </div>	
+                                                <div class="listing-details-group">
+                                                    <ul>
+                                                        <li>
+                                                            <span><img src="assets/img/icons/car-parts-05.svg" alt="Auto"></span>
+                                                            <p> {{ car.transmission }} </p>
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/img/icons/car-parts-02.svg" alt="10 KM"></span>
+                                                            <p> {{car.mileage}} KM</p>
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/img/icons/car-parts-03.svg" alt="Petrol"></span>
+                                                            <p>{{car.fuelType}}</p>
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/img/icons/car-parts-06.svg" alt="Persons"></span>
+                                                            <p> {{ car.numberOfPassanger }} Persones</p>
+                                                        </li>
+                                                    </ul>	
+                                                </div>	
+                                                <div class="blog-list-head list-head-bottom d-flex">
+                                                    <div class="blog-list-title">
+                                                        <div class="title-bottom">
+                                                            <div class="car-list-icon">
+                                                                <img src="/assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="address-info">
+                                                                <h5><a href="javascript:void(0)"> {{car.name}}</a></h5>
+                                                                <h6><i class="feather icon-map-pin me-2"></i>Marrakech</h6>
+                                                            </div>
+                                                        </div>	
+                                                    </div>
+                                                    <div class="listing-button">
+                                                        <a routerLink="/listings/listing-details/{{car.licenceNumber}}" type="sumit" class="btn btn-order"><span><i class="feather icon-calendar me-2"></i></span>Réserver</a>
+                                                    </div>
+                                                </div>	
+                                            </div>					 
+                                        </div>			 
+                                    </div> 
+                                </div>
+							</div>
+                        </div>
+
+						<!-- pagination -->
+
+
+
+						<!-- -->
+						<!--Pagination--> 
+						<div *ngIf="isFilter == false" class="blog-pagination">
+							<nav>
+								<ul class="pagination page-item justify-content-center">
+									<li class="previtem">
+										<a class="page-link" (click)="previous()"><i class="fas fa-regular fa-arrow-left me-2"></i> Précéd</a>
+									</li>
+									<li class="justify-content-center pagination-center"> 
+										<div class="page-group">
+											<ul>
+
+												<li *ngFor="let item of paginate" class="page-item" (click)="goTo(item)">
+													<a *ngIf="+item == thePageNumber" class="active page-link">{{item}}</a>
+													<a *ngIf="+item != thePageNumber" class="page-link" >{{item}}</a>
+												</li>
+											</ul>
+										</div>													
+									</li>													
+									<li class="nextlink">
+										<a class="page-link" (click)="next()">Suivant <i class="fas fa-regular fa-arrow-right ms-2"></i></a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!--/Pagination-->
+
+					</div>
+				</div>		
+		  	</div>	
+		</section>	
+		<!-- /Car Grid View -->	
